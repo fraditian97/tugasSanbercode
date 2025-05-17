@@ -12,7 +12,6 @@ describe ('Secanrio Login',() =>{
         cy.get("button[type='submit']").click()
         cy.wait('@adit').its('response.statusCode').should('eq',200);
     })
-
     
     it ('tc2-loginValid', () => {
     cy.get("input[placeholder='Username']").clear().type('Admin')
