@@ -1,18 +1,23 @@
+import logindata from "../../fixtures/logindata.json";
 
 class loginpage {
     visit() {
         //Buka halaman Website Login
      cy.visit('/index.php/auth/login');
      }
-    inputUsername (){
-    cy.get("input[placeholder='Username']").clear().type('Admin')
+
+    inputUsername (username){
+    cy.get("input[placeholder='Username']").clear().type(username)
     }
-    Inputpassword (){
-    cy.xpath("//input[@placeholder='Password']").clear().type('admin123')
+
+    Inputpassword (password){
+    cy.xpath("//input[@placeholder='Password']").clear().type(password)
     }
+    
     loginbtn(){
     cy.get("button[type='submit']").click()
     }
+    
  }
 
- export default new loginpage()
+export default new loginpage ()
